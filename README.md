@@ -37,4 +37,21 @@ This project aims to broaden our knowledge of system administration by using Doc
 ### Namespaces :
  * Docker uses a technology called namespaces to provide the isolated workspace called the container. When you run a container, Docker creates a set of namespaces for that container. These namespaces provide a layer of isolation. Each aspect of a container runs in a seperate namespace and its access is limited to that namespace.
 
-
+# DOCKER CLI (Command line interface) : 
+ * Here Ill try to explain some useful command to manipulate and debug Container, and to pull images as well .
+     ## Docker pull :
+        * this command is used to download a Docker image from a registry and store it locally on your machine.
+     ## Docker run :
+        * command is used to create and start a new Docker container.
+    * the RUN commanbd have some options "-d" for detached mode, "--name" to rename a container and "-p" for port binding .
+       - The "-d" option runs the container in the background or detach mode, allowing you to continue using your terminal without being attached to the container's output.
+       - The "--name" option allows you to specify a custom name for the container, making it easier to identify and reference.
+       - The "-p" option is used for port mapping, enabling communication between the host system and the container. It allows you to bind a port on the host to a port              inside the container, facilitating access to the containerized application from the external world.
+    Including these options in the "docker run" command allows you to run a container in the background with a custom name and establish port mappings for communication         with other services or applications.
+    ## Docker ps -a (all):
+       * thsi command is used to list the currently running Docker containers on your system.
+   * It provides an overview of the containers' essential information, such as their container ID, image used, status (running, stopped, etc.), and the ports they are           listening on. It allows you to quickly view the active containers and gather information about them, which can be helpful for troubleshooting, monitoring, or managing      your Docker environment.
+  
+   ## Docker images :
+       * which gives you all the images that you have localy .
+    
