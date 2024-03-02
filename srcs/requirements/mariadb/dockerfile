@@ -1,0 +1,25 @@
+FROM debian:buster
+#This command updates the package lists in the image and installs the "mariadb-server" package. 
+#The "-y" flag is used to automatically answer "yes" to the installation prompt.
+
+RUN apt update && apt install -y mariadb-server
+#This command copies the contents of the "tools" directory from the build context to the "/var/www/" directory inside the image.
+#The build context is the directory from which the Docker build command is executed.
+
+COPY tools /var/www/
+#his command copies the contents of the "tools" directory from the build context to the "/var/www/" directory inside the image.
+#The build context is the directory from which the Docker build command is executed.
+
+RUN chmod +x /var/www/add_db.sh
+# This command sets the executable permissions (+x) on the "add_db.sh" script located in the "/var/www/" directory. 
+#This allows the script to be executed later.
+
+RUN sed -i 's/bind-address/#bind-adress/' /etc/mysql/mariadb.conf.d/50-server.cnf
+#This command uses the sed command to modify the "50-server.cnf" configuration file for MariaDB located in "/etc/mysql/mariadb.conf.d/". 
+#It replaces any occurrence of "bind-address" with "#bind-address", effectively commenting out the line. 
+#This modification is typically done to allow connections to the MariaDB server from outside the container.
+
+ENTRYPOINT [ "/var/www/data.sh" ]
+#This command sets the entrypoint for the container to be the "data.sh" script located in "/var/www/".
+#The entrypoint is the command that is executed when the container is started. In this case, it runs the "data.sh" script.
+
