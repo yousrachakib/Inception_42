@@ -1,10 +1,9 @@
 FROM debian:buster
-#This command updates the package lists in the image and installs the "mariadb-server" package. 
-#The "-y" flag is used to automatically answer "yes" to the installation prompt.
+
 
 RUN apt update && apt install -y mariadb-server
-#This command copies the contents of the "tools" directory from the build context to the "/var/www/" directory inside the image.
-#The build context is the directory from which the Docker build command is executed.
+#This command updates the package lists in the image and installs the "mariadb-server" package. 
+#The "-y" flag is used to automatically answer "yes" to the installation prompt.
 
 COPY tools /var/www/
 #his command copies the contents of the "tools" directory from the build context to the "/var/www/" directory inside the image.
