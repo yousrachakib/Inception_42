@@ -2,12 +2,16 @@ services:
 
   mariadb:
     container_name: mariadb
+    env_file:
+        - .env
+    ports:
+        - 3360:3360
     build: ./requirements/mariadb
     image: mariadb:inception
+    volumes:
+      - db:/var/lib/mysql
     networks:
       - mynetwork
-    env_file:
-      - .env
     restart: always
 
 networks:
