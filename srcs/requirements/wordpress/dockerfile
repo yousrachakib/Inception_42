@@ -3,28 +3,11 @@ FROM debian:buster
 RUN apt update
 
 RUN apt -y install php7.3 php-mysqli php-fpm wget curl
-#This instruction uses the apt package manager to install several packages inside the container.
-#It installs PHP 7.3, PHP MySQLi extension, PHP-FPM, wget. 
-#The -y flag is used to automatically answer "yes" to any prompts during the installation process.
-
-RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
-        && chmod +x wp-cli.phar \
-        && mv wp-cli.phar /usr/local/bin/wp
 
 COPY tools /var/www/
-#This instruction copies the file wordpress.sh from the ./tools/ directory on the local machine to the /var/www/ directory inside the container.
-#It assumes that the wordpress.sh script is located in a directory called tools relative to the current directory.
 
 RUN chmod +x /var/www/wordpress.sh
-#This instruction sets the executable permission for the wordpress.sh script inside the container.
-#The chmod +x command makes the script executable, allowing it to be run later.
 
 ENTRYPOINT [ "/var/www/wordpress.sh" ]
-#This instruction sets the entrypoint for the container.
-#The specified command /var/www/wordpress.sh becomes the primary command to be executed when the container starts.
-#The entrypoint is not overridden by the command specified when running the container.
 
 CMD ["/usr/sbin/php-fpm7.3", "--nodaemonize"]
-#This instruction sets the default command to run when the container starts,
-#if no other command is provided. It runs the php-fpm7.3 command with the --nodaemonize flag,
-#which starts PHP-FPM in non-daemonize mode.
