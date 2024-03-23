@@ -39,7 +39,7 @@ A Dockerfile is a text file that contains a set of instructions used to build a 
   - EXPOSE: Declares the ports on which the container will listen.
   - CMD or ENTRYPOINT: Defines the command to run when the container starts.
 
-  ### Its Important to knwo the diffrence between CMD and ENTRYPOINT (this link may be helpful) :
+  ### *Its Important to knwo the diffrence between CMD and ENTRYPOINT (this link may be helpful)*:
   
   -->> https://spacelift.io/blog/docker-entrypoint-vs-cmd .
 
@@ -61,7 +61,7 @@ From docker documents : Docker Compose is a tool for defining and running multi-
 
 Compose simplifies the control of your entire application stack, making it easy to manage services, networks, and volumes in a single, comprehensible YAML configuration file. Then, with a single command, you create and start all the services from your configuration file.
 
-### Learn more on how it works and it benifits -->> https://docs.docker.com/compose/ .
+### *Learn more on how it works and it benifits* -->> https://docs.docker.com/compose/ .
 
 we will onlt cover CLI (Command Line Interface) and how to write a .yml file :
 
@@ -74,3 +74,32 @@ we will onlt cover CLI (Command Line Interface) and how to write a .yml file :
  - ***docker-compose exec***: This command allows you to execute a command inside a running container. For example, docker-compose exec <service_name> <command> runs the      specified command in the container associated with the given service.
  - ***docker-compose ps***: This command shows the status of the containers defined in your Docker Compose file. It displays information such as the container ID, service name, and status.
  - **docker-compose logs**: This command displays the logs of the running services defined in your Docker Compose file. You can specify the service name to view logs for a    specific service.
+### *When it comes to writing a Docker Compose YAML file (docker-compose.yml)* :
+
+**Example**
+
+```
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - 8080:80
+    volumes:
+      - ./html:/usr/share/nginx/html
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+```
+*Here are some key concepts in the Docker Compose YAML file:*
+
+- ***version:*** Specifies the version of the Docker Compose file format.
+- ***services:*** Defines the services in your application.
+- ***image:*** Specifies the image to use for the service.
+- ***ports:*** Maps ports between the host and the container.
+- ***volumes:*** Mounts host directories or named volumes to the container.
+- ***environment:*** Sets environment variables for the container.
+
+You can customize and extend the Docker Compose YAML file based on your application's requirements, adding more services, networks, volumes, environment variables, and other options.
+Once you have created the Docker Compose YAML file, you can use the aforementioned Docker Compose CLI commands to manage and interact with your Docker Compose project effectively.
