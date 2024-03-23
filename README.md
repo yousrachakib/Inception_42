@@ -65,12 +65,12 @@ Compose simplifies the control of your entire application stack, making it easy 
 
 we will onlt cover CLI (Command Line Interface) and how to write a .yml file :
 
- - **docker-compose up**: This command starts all the services defined in your Docker Compose file. It creates and starts the containers, networks, and volumes as necessary.     By default, it displays the logs of the running services in the console.
- - **docker-compose** down: This command stops and removes all the containers, networks, and volumes created by docker-compose up. It cleans up the resources associated with     the Docker Compose project.
- - **docker-compose build**: This command builds the services defined in your Docker Compose file. It rebuilds the Docker images if the Dockerfiles or build contexts have         changed.
- - **docker-compose start**: This command starts the containers for the services defined in your Docker Compose file. Unlike docker-compose up, it does not create new             containers or networks if they don't exist.
- - **docker-compose stop**: This command stops the running containers for the services defined in your Docker Compose file without removing them. It preserves their state,        allowing you to start them again later.
- - **docker-compose restart**: This command restarts the containers for the services defined in your Docker Compose file. It stops and starts the containers in the correct        order.
- - **docker-compose exec**: This command allows you to execute a command inside a running container. For example, docker-compose exec <service_name> <command> runs the            specified command in the container associated with the given service.
- - **docker-compose ps**: This command shows the status of the containers defined in your Docker Compose file. It displays information such as the container ID, service name,     and status.
- - **docker-compose logs**: This command displays the logs of the running services defined in your Docker Compose file. You can specify the service name to view logs for a        specific service.
+ - ***docker-compose up***: This command starts all the services defined in your Docker Compose file. It creates and starts the containers, networks, and volumes as necessary. By default, it displays the logs of the running services in the console.
+ - ***docker-composedown***: This command stops and removes all the containers, networks, and volumes created by docker-compose up. It cleans up the resources associated with the Docker Compose project.
+ - ***docker-compose build***: This command builds the services defined in your Docker Compose file. It rebuilds the Docker images if the Dockerfiles or build contexts have changed.
+ - ***docker-compose start***: This command starts the containers for the services defined in your Docker Compose file. Unlike docker-compose up, it does not create new       containers or networks if they don't exist.
+ - ***docker-compose stop***: This command stops the running containers for the services defined in your Docker Compose file without removing them. It preserves their state, allowing you to start them again later.
+ - ***docker-compose restart***: This command restarts the containers for the services defined in your Docker Compose file. It stops and starts the containers in the correct order.
+ - ***docker-compose exec***: This command allows you to execute a command inside a running container. For example, docker-compose exec <service_name> <command> runs the      specified command in the container associated with the given service.
+ - ***docker-compose ps***: This command shows the status of the containers defined in your Docker Compose file. It displays information such as the container ID, service name, and status.
+ - **docker-compose logs**: This command displays the logs of the running services defined in your Docker Compose file. You can specify the service name to view logs for a    specific service.
