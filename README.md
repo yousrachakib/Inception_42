@@ -7,7 +7,7 @@ This project is a system administration exercise aimed at broadening your knowle
 # Table of Contents:
   - Docker Overview.
   - What is a Dockerfile.
-  - What is a Docker compose.
+  - What is Docker compose.
   - Mariadb.
   - Wordpress.
   - Nginx.
@@ -39,7 +39,7 @@ A Dockerfile is a text file that contains a set of instructions used to build a 
   - EXPOSE: Declares the ports on which the container will listen.
   - CMD or ENTRYPOINT: Defines the command to run when the container starts.
 
-  # Its Important to knwo the diffrence between CMD and ENTRYPOINT (this link may be helpful) :
+  ### Its Important to knwo the diffrence between CMD and ENTRYPOINT (this link may be helpful) :
   
   -->> https://spacelift.io/blog/docker-entrypoint-vs-cmd .
 
@@ -56,3 +56,21 @@ A Dockerfile is a text file that contains a set of instructions used to build a 
   - Clean up any temporary files or artifacts created during the build process.
   - Use .dockerignore file to exclude unnecessary files and directories from the build context.
 
+# What is Docker compose ? 
+From docker documents : Docker Compose is a tool for defining and running multi-container applications. It is the key to unlocking a streamlined and efficient development and deployment experience.
+
+Compose simplifies the control of your entire application stack, making it easy to manage services, networks, and volumes in a single, comprehensible YAML configuration file. Then, with a single command, you create and start all the services from your configuration file.
+
+### Learn more on how it works and it benifits -->> https://docs.docker.com/compose/ .
+
+we will onlt cover CLI (Command Line Interface) and how to write a .yml file :
+
+ - docker-compose up: This command starts all the services defined in your Docker Compose file. It creates and starts the containers, networks, and volumes as necessary.     By default, it displays the logs of the running services in the console.
+ - docker-compose down: This command stops and removes all the containers, networks, and volumes created by docker-compose up. It cleans up the resources associated with     the Docker Compose project.
+ - docker-compose build: This command builds the services defined in your Docker Compose file. It rebuilds the Docker images if the Dockerfiles or build contexts have         changed.
+ - docker-compose start: This command starts the containers for the services defined in your Docker Compose file. Unlike docker-compose up, it does not create new             containers or networks if they don't exist.
+ - docker-compose stop: This command stops the running containers for the services defined in your Docker Compose file without removing them. It preserves their state,        allowing you to start them again later.
+ - docker-compose restart: This command restarts the containers for the services defined in your Docker Compose file. It stops and starts the containers in the correct        order.
+ - docker-compose exec: This command allows you to execute a command inside a running container. For example, docker-compose exec <service_name> <command> runs the            specified command in the container associated with the given service.
+ - docker-compose ps: This command shows the status of the containers defined in your Docker Compose file. It displays information such as the container ID, service name,     and status.
+ - docker-compose logs: This command displays the logs of the running services defined in your Docker Compose file. You can specify the service name to view logs for a        specific service.
