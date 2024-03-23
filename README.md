@@ -39,6 +39,10 @@ A Dockerfile is a text file that contains a set of instructions used to build a 
   - EXPOSE: Declares the ports on which the container will listen.
   - CMD or ENTRYPOINT: Defines the command to run when the container starts.
 
+  # Its Important to knwo the diffrence between CMD and ENTRYPOINT (this link may be helpful) :
+  
+  -->> https://spacelift.io/blog/docker-entrypoint-vs-cmd .
+
  LAYERED FILESYSTEM :
  Docker images use a layered filesystem, where each instruction in the Dockerfile creates a new layer. Layers are read-only and share common parts, which allows for         efficient storage and faster image builds. When you make changes to a running container, those changes are saved in a new writable layer called the container layer.
 
