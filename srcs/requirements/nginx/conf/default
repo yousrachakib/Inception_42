@@ -1,11 +1,16 @@
 server 
 {
-    listen 80;
+    listen 443 ssl;
+	ssl_protocols TLSv1.3;
+
+	ssl_certificate /etc/nginx/ssl/yochakib.crt;
+    ssl_certificate_key /etc/nginx/ssl/yochakib.key;
+	server_name localhost;
     root /var/www/html;
-    index index.php index.html index.htm;
-    location ~ \.php$ 
+    index index.php;
+    location ~ \.php$
     {
-        fastcgi_pass wordpress:9000; 
+        fastcgi_pass wordpress:9000;
         fastcgi_index index.php;
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;

@@ -5,8 +5,8 @@ services:
     container_name: mariadb
     build: ./requirements/mariadb
     image: mariadb:inception
-    # volumes:
-    #   - mariadb_data:/var/lib/mysql
+    volumes:
+      - mariadb_data:/var/lib/mysql
     networks:
       - network
     env_file:
@@ -40,7 +40,7 @@ services:
     env_file:
       - .env
     ports:
-      - 80:80
+      - 443:443
     volumes:
       - wordpress_data:/var/www/html
     networks:
