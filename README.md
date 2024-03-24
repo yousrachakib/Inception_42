@@ -22,7 +22,7 @@ Special thanks to the team at 42 for providing the guidelines and requirements.
 # Docker overview :
 Docker is a platform that allows developers to package their applications and all of their dependencies into lightweight containers. These containers can then be easily shared and run consistently across different environments, from development to production. Think of it like a shipping container for software – it encapsulates everything your application needs to run, such as code, libraries, and system tools. Docker simplifies the process of building, shipping, and running applications, making it easier to deploy software reliably and efficiently, regardless of the underlying infrastructure.
 
- --> https://www.tldraw.com/r/UTQImIBg9XFg1lxE7Ladg?v=-1807,1146,3336,1845&p=page .
+ --> https://www.tldraw.com/v/ImIQTUgdaL2Exl6gFX4gB?v=-1807,1146,3336,1845&p=page .
 
 # What is Dockerfile : (we will be using it to build our own images)
 A Dockerfile is a text file that contains a set of instructions used to build a Docker image.When you build an image using a Dockerfile, Docker reads the instructions and executes them in order, creating layers that form the final image.
@@ -103,3 +103,5 @@ services:
 
 You can customize and extend the Docker Compose YAML file based on your application's requirements, adding more services, networks, volumes, environment variables, and other options.
 Once you have created the Docker Compose YAML file, you can use the aforementioned Docker Compose CLI commands to manage and interact with your Docker Compose project effectively.
+
+# Mariadb :
