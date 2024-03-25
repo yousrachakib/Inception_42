@@ -104,12 +104,16 @@ services:
 You can customize and extend the Docker Compose YAML file based on your application's requirements, adding more services, networks, volumes, environment variables, and other options.
 Once you have created the Docker Compose YAML file, you can use the aforementioned Docker Compose CLI commands to manage and interact with your Docker Compose project effectively.
   ##***Docker Networking Concepts*** :
-    - **Networks**: Docker allows you to create and manage networks that act as virtual switches connecting containers. Networks can be user-defined or pre-defined (e.g.,       bridge, host, overlay networks).
-    - **Containers**: Docker containers can be connected to one or more networks, enabling communication between containers within the same network.
-    - **IP Addressing**: Containers within a network are assigned IP addresses automatically. Docker uses a built-in DNS server for name resolution, allowing containers         to refer to each other by their container names.
-    - **Port Mapping**: Docker allows you to map container ports to host ports, enabling external access to containerized services.
-    - **Container-to-Container Communication:** Containers on the same network can communicate with each other directly using IP addresses or container names. Docker            provides DNS resolution for container names within the same network.
-    - **Container-to-External Network Communication**: Containers can access external networks, including the internet, by using the host's network stack or by routing          traffic through network gateways.
+- **Networks**: Docker allows you to create and manage networks that act as virtual switches connecting containers. Networks can be user-defined or pre-defined (e.g.,       bridge, host, overlay networks).
+- **Containers**: Docker containers can be connected to one or more networks, enabling communication between containers within the same network.
+    
+- **IP Addressing**: Containers within a network are assigned IP addresses automatically. Docker uses a built-in DNS server for name resolution, allowing containers         to refer to each other by their container names.
+  
+- **Port Mapping**: Docker allows you to map container ports to host ports, enabling external access to containerized services.
+  
+- **Container-to-Container Communication:** Containers on the same network can communicate with each other directly using IP addresses or container names. Docker            provides DNS resolution for container names within the same network.
+  
+- **Container-to-External Network Communication**: Containers can access external networks, including the internet, by using the host's network stack or by routing          traffic through network gateways.
     
 **discover more**--> https://www.tldraw.com/v/qfGwbOg8Y0OmGLCeHuibx?v=-230,136,1966,1087&p=DufyFg2FW2uXx3ULtUAfr .
     
