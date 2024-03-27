@@ -117,4 +117,15 @@ Once you have created the Docker Compose YAML file, you can use the aforemention
     
 **discover more**--> https://www.tldraw.com/v/qfGwbOg8Y0OmGLCeHuibx?v=-230,136,1966,1087&p=DufyFg2FW2uXx3ULtUAfr .
     
+## **This project utilizes a combination of MariaDB, WordPress, and Nginx to create a robust and scalable web application environment.**
+
 # Mariadb :
+
+MariaDB is an open-source relational database management system (RDBMS) that acts as the backend database for the web application. It is a drop-in replacement for MySQL and offers high performance, scalability, and compatibility with MySQL tools and applications. MariaDB provides a reliable and efficient way to store and manage structured data, ensuring data integrity and security.
+
+# Wordpress :
+
+WordPress is a popular content management system (CMS) that simplifies the process of creating and managing websites. It provides a user-friendly interface and a wide range of themes and plugins, making it highly customizable and versatile. WordPress relies on the MariaDB database to store website content, configuration settings, and user data. With WordPress, you can easily create and publish content, manage user accounts, and extend the functionality of your website.
+
+# NGINX :
+ginx is a high-performance web server and reverse proxy server. NGINX container plays a crucial role in the project by acting as a reverse proxy and handling incoming requests from clients. The NGINX container handles SSL/TLS termination, decrypting the incoming encrypted requests and forwarding them to the backend services in plain HTTP. This offloads the SSL/TLS decryption process from the backend services, improving their performance.
