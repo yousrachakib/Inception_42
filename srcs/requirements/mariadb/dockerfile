@@ -6,6 +6,9 @@ COPY tools /var/www/
 
 RUN chmod +x /var/www/data.sh
 
+RUN echo "[mysqld]" >> /etc/mysql/mariadb.conf.d/50-server.cnf
+RUN echo "lower_case_table_names=1" >> /etc/mysql/mariadb.conf.d/50-server.cnf
+
 RUN sed -i 's/bind-address/#bind-adress/' /etc/mysql/mariadb.conf.d/50-server.cnf
 
 EXPOSE 3360

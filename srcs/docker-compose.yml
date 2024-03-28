@@ -52,13 +52,13 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: ${PWD}/data/mariadb
+      device: /Users/elliech/Desktop/Inception/srcs/data/mariadb
 
   wordpress_data:
     driver_opts:
       o: bind
       type: none
-      device: ${PWD}/data/wordpress
+      device: /Users/elliech/Desktop/Inception/srcs/data/wordpress
 
 networks:
   network:

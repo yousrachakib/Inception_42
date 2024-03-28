@@ -5,7 +5,7 @@ server
 
 	ssl_certificate /etc/nginx/ssl/yochakib.crt;
     ssl_certificate_key /etc/nginx/ssl/yochakib.key;
-	server_name localhost;
+	server_name yochakib.42.fr;
     root /var/www/html;
     index index.php;
     location ~ \.php$
