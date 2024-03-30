@@ -1,7 +1,7 @@
 # Define variables
-COMPOSE_FILE := ./srcs/docker-compose.yml
-WORDPRESS_DATA_DIR := ./srcs/data/wordpress
-MARIA_DB_DATA_DIR := ./srcs/data/mariadb
+COMPOSE_FILE := "./srcs/docker-compose.yml"
+WORDPRESS_DATA_DIR := /home/yochakib/data/wordpress
+MARIA_DB_DATA_DIR := /home/yochakib/data/mariadb
 
 # Define targets
 .PHONY: up down logs clean build
@@ -17,8 +17,8 @@ logs:
 
 clean:
 	docker-compose -f $(COMPOSE_FILE) down --volumes --remove-orphans
-	cd $(WORDPRESS_DATA_DIR) && rm -rf *
-	cd $(MARIA_DB_DATA_DIR) && rm -rf *
+	rm -rf $(WORDPRESS_DATA_DIR)/*
+	rm -rf $(MARIA_DB_DATA_DIR)/*
 
 build: create_dirs
 	docker-compose -f $(COMPOSE_FILE) build
